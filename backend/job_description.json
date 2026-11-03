@@ -1,0 +1,11 @@
+
+{
+    "job_title": "Python Developer",
+    "description": "Looking for a developer with Python programming, Flask backend development, SQL databases and MongoDB experience.",
+    "required_skills": [
+        "Python",
+        "Flask",
+        "SQL",
+        "MongoDB"
+    ]
+}

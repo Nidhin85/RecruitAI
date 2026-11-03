@@ -1,0 +1,44 @@
+﻿# Python virtual environments
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Environment files and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# React and Node
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Generated candidate data
+backend/candidate_data.json
+backend/candidate_batch_results.json
+backend/candidate_match_results.json
+backend/combined_match_results.json
+backend/semantic_match_results.json
+backend/validated_candidate_data.json
+backend/extracted_resume.txt
+backend/recruitment_pipeline_export.csv
