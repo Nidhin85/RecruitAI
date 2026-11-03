@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import os
+import re
 
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -42,11 +43,11 @@ def main():
         if search_term:
             query["$or"] = [
                 {"candidate_name": {
-                    "$regex": search_term,
+                    "$regex": re.escape(search_term),
                     "$options": "i"
                 }},
                 {"candidate_email": {
-                    "$regex": search_term,
+                    "$regex": re.escape(search_term),
                     "$options": "i"
                 }}
             ]

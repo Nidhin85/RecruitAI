@@ -1,6 +1,6 @@
 
 from pathlib import Path
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 
 
 def extract_text(pdf_path):
@@ -13,7 +13,7 @@ def extract_text(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
     # Open the PDF document.
-    document = fitz.open(pdf_path)
+    document = pymupdf.open(pdf_path)
 
     extracted_text = ""
 

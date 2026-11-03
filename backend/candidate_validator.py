@@ -16,7 +16,7 @@ def validate_candidate(candidate):
     # Check candidate name.
     name = candidate.get("name")
 
-    if not name or not name.strip():
+    if not isinstance(name, str) or not name.strip():
         issues.append("Candidate name is missing.")
 
     # Check email format.
@@ -24,7 +24,7 @@ def validate_candidate(candidate):
 
     email_pattern = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
 
-    if not email:
+    if not isinstance(email, str) or not email.strip():
         issues.append("Email address is missing.")
     elif not re.fullmatch(email_pattern, email.strip()):
         issues.append("Email format appears invalid.")
@@ -32,7 +32,7 @@ def validate_candidate(candidate):
     # Check phone number format.
     phone = candidate.get("phone")
 
-    if not phone:
+    if not isinstance(phone, str) or not phone.strip():
         issues.append("Phone number is missing.")
     else:
         digits = re.sub(r"\D", "", phone)
@@ -43,7 +43,7 @@ def validate_candidate(candidate):
     # Check skills.
     skills = candidate.get("skills", [])
 
-    if not skills:
+    if not isinstance(skills, list) or not skills:
         issues.append("No recognized skills were extracted.")
 
     # Add validation results.

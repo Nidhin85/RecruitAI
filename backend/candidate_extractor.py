@@ -35,7 +35,7 @@ def extract_candidate_details(text):
     )
     phone = phone_match.group(0).strip() if phone_match else None
 
-        # Find skills using a predefined list.
+    # Find skills using a predefined list.
     known_skills = [
         "Python", "Java", "JavaScript", "Flask",
         "Django", "SQL", "MySQL", "MongoDB", "React",
@@ -44,7 +44,7 @@ def extract_candidate_details(text):
         "PyMuPDF", "Postman", "C++", "C"
     ]
 
-    # Single letters and symbols need exact capitalisation to avoid false matches.
+    # Single letters and symbols need exact capitalisation.
     case_sensitive_skills = {"C", "C++"}
 
     matched_skills = []
